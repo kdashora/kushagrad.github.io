@@ -12,7 +12,7 @@ tags:
 name | description
 -----|------------
  KD  | Cool
-Kay  | silly
+Kay  | Silly
 
 ### This is a sub heading
 1. step 1
