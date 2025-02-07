@@ -1,5 +1,5 @@
 ---
-title: Individual Subsystem
+title: Block Diagram
 ---
 
 ## Block Diagram
