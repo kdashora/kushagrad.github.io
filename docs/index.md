@@ -1,19 +1,21 @@
 ---
 title: Home
-tags:
-- tag1
-- tag2
----
 
-## Hey, my name is Kushagra aka KD
-* KD 1
-* KD 2
 
-name | description
------|------------
- KD  | Cool
-Kay  | Silly
+**Name:** Kushagra Dashora  
+**Class:** EGR314 - 12:00PM - 1:15PM Monday/Wednesday  
+**Professor:** Dr. Kevin Nichols  
 
-### This is a sub heading
-1. step 1
-2. step 2
+
+
+## About Me
+
+**Aarshon's EGR 314 Project**  
+**Junior Year Engineering Showcase**
+
+Welcome! My name is Aarshon, and this project is part of my junior year Engineering showcase. Our mission is to design and deliver a STEM-themed, interactive, web-enabled device that inspires K-12 students to explore science, technology, engineering, and math (STEM).
+
+### Team Goals
+- Build a high-quality, market-ready product.  
+- Collaborate effectively as a team to deliver results.  
+- Stick to industry standards and modular design principles.
