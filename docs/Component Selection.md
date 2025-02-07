@@ -19,7 +19,7 @@ The ESP32 microcontroller is the core of this subsystem, providing Wi-Fi connect
 
 | **Option**               | **Pros**                                                                 | **Cons**                                                       | **Unit Cost & Link**                                                                 |
 |---------------------------|-------------------------------------------------------------------------|----------------------------------------------------------------|-------------------------------------------------------------------------------------|
-| **ESP32-S3-WROOM-1-N4 (Final Choice)** (./subfolder/ESP32.jpg) | Built-in Wi-Fi/Bluetooth, supports I2C/SPI/UART, low power modes, 4MB Flash | 3.3V logic may require level shifters for some peripherals      | [$2.95 DigiKey](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N4/16162639) |
+| ![**ESP32-S3-WROOM-1-N4 (Final Choice)**] (./subfolder/ESP32.jpg) | Built-in Wi-Fi/Bluetooth, supports I2C/SPI/UART, low power modes, 4MB Flash | 3.3V logic may require level shifters for some peripherals      | [$2.95 DigiKey](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N4/16162639) |
 | ESP8266                  | Low cost, simple to use                                                 | Limited GPIO pins, no dual-core processor                      | [$1.60 DigiKey](https://www.digikey.com/en/products/detail/espressif-systems/ESP8266EX/8028401) |
 | Raspberry Pi Pico W      | Dual-core processor, Wi-Fi support                                      | Higher power consumption, larger physical size                 | [$6.00 DigiKey](https://www.digikey.com/en/products/detail/raspberry-pi/SC0918/16627943) |
 
@@ -33,7 +33,7 @@ To ensure stable operation of the ESP32 and sensors, a voltage regulator is requ
 
 | **Option**           | **Pros**                                                  | **Cons**                                   | **Unit Cost & Link**                                                                 |
 |-----------------------|----------------------------------------------------------|-------------------------------------------|-------------------------------------------------------------------------------------|
-| **AMS1117-3.3 (Final Choice)** (./subfolder/AMS1117.jpg)         | Simple design                                            | Low efficiency                            | [$0.68 DigiKey](https://www.digikey.com/en/products/detail/umw/AMS1117-3-3/17635254) |
+| ![**AMS1117-3.3 (Final Choice)**] (./subfolder/AMS1117.jpg)         | Simple design                                            | Low efficiency                            | [$0.68 DigiKey](https://www.digikey.com/en/products/detail/umw/AMS1117-3-3/17635254) |
 | LM2596                | High efficiency                                          | Larger physical size                      | [$6.70 DigiKey](https://www.digikey.com/en/products/detail/texas-instruments/LM2596S-ADJ-NOPB/363705) |
 | HT7333    | Ultra-low quiescent current                              | Limited current output                    | [$0.65 DigiKey](https://www.digikey.com/en/products/detail/umw/HT7333-A/17635230) |
 
