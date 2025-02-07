@@ -19,9 +19,9 @@ The ESP32 microcontroller is the core of this subsystem, providing Wi-Fi connect
 
 | **Option**               | **Pros**                                                                 | **Cons**                                                       | **Unit Cost & Link**                                                                 |
 |---------------------------|-------------------------------------------------------------------------|----------------------------------------------------------------|-------------------------------------------------------------------------------------|
-| **ESP32-S3-WROOM-1-N4 (Final Choice)** | Built-in Wi-Fi/Bluetooth, supports I2C/SPI/UART, low power modes, 4MB Flash | 3.3V logic may require level shifters for some peripherals      | [$3.40 DigiKey](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N4/15571629) |
-| ESP8266                  | Low cost, simple to use                                                 | Limited GPIO pins, no dual-core processor                      | [$2.50 DigiKey](https://www.digikey.com/en/products/detail/espressif-systems/ESP8266EX/5904905) |
-| Raspberry Pi Pico W      | Dual-core processor, Wi-Fi support                                      | Higher power consumption, larger physical size                 | [$6.00 DigiKey](https://www.digikey.com/en/products/detail/raspberry-pi/PICO-W/17394693) |
+| **ESP32-S3-WROOM-1-N4 (Final Choice)** | Built-in Wi-Fi/Bluetooth, supports I2C/SPI/UART, low power modes, 4MB Flash | 3.3V logic may require level shifters for some peripherals      | [$2.95 DigiKey](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N4/16162639) |
+| ESP8266                  | Low cost, simple to use                                                 | Limited GPIO pins, no dual-core processor                      | [$1.60 DigiKey](https://www.digikey.com/en/products/detail/espressif-systems/ESP8266EX/8028401) |
+| Raspberry Pi Pico W      | Dual-core processor, Wi-Fi support                                      | Higher power consumption, larger physical size                 | [$6.00 DigiKey](https://www.digikey.com/en/products/detail/raspberry-pi/SC0918/16627943) |
 
 **Final Selection: ESP32-S3-WROOM-1-N4**  
 *Rationale:* The ESP32-S3-WROOM-1-N4 was selected due to its robust Wi-Fi capabilities, dual-core processor for multitasking, and compatibility with I2C/SPI protocols required for sensor interfacing. Its low power consumption and extensive library support make it ideal for real-time data transmission.
@@ -33,23 +33,18 @@ To ensure stable operation of the ESP32 and sensors, a voltage regulator is requ
 
 | **Option**           | **Pros**                                                  | **Cons**                                   | **Unit Cost & Link**                                                                 |
 |-----------------------|----------------------------------------------------------|-------------------------------------------|-------------------------------------------------------------------------------------|
-| AMS1117-3.3           | Simple design                                            | Low efficiency                            | [$0.35 DigiKey](https://www.digikey.com/en/products/detail/advanced-monolithic-systems/AMS1117-3.3/10392769) |
-| LM2596                | High efficiency                                          | Larger physical size                      | [$1.50 DigiKey](https://www.digikey.com/en/products/detail/texas-instruments/LM2596T-5.0-NOPB/10392771) |
-| **HT7333 (Final Choice)**  | Ultra-low quiescent current                              | Limited current output                    | [$0.50 DigiKey](https://www.digikey.com/en/products/detail/holtek-semiconductor/HT7333-A/10392772) |
+| **AMS1117-3.3 (Final Choice)**          | Simple design                                            | Low efficiency                            | [$0.68 DigiKey](https://www.digikey.com/en/products/detail/umw/AMS1117-3-3/17635254) |
+| LM2596                | High efficiency                                          | Larger physical size                      | [$6.70 DigiKey](https://www.digikey.com/en/products/detail/texas-instruments/LM2596S-ADJ-NOPB/363705) |
+| HT7333    | Ultra-low quiescent current                              | Limited current output                    | [$0.65 DigiKey](https://www.digikey.com/en/products/detail/umw/HT7333-A/17635230) |
 
 **Final Selection: HT7333**  
-*Rationale:* The HT7333 was chosen for its low quiescent current and suitability for low-power embedded systems. It ensures efficient voltage regulation while minimizing heat dissipation.
+*Rationale:* The AMS1117-3.3 was selected as the optimal voltage regulator for this subsystem due to its low cost, simplicity, compatibility with surface-mount requirements, and ability to meet the current demands of the ESP32 microcontroller and connected sensors.
 
 ---
 
 ### **Power Input**
 The subsystem requires a reliable power source capable of providing sufficient current for the ESP32 and sensors.
 
-| **Option**           | **Pros**                                                  | **Cons**                                   | **Unit Cost & Link**                                                                 |
-|-----------------------|----------------------------------------------------------|-------------------------------------------|-------------------------------------------------------------------------------------|
-| USB Power Supply      | Widely available                                         | Requires USB cable                        | [$5.00 DigiKey](https://www.digikey.com/en/products/detail/cui-devices/VUB240-SMT-USB-MICRO-B/10392773) |
-| Li-Ion Battery Pack   | Portable                                                 | Requires charging circuit                 | [$10.00 DigiKey](https://www.digikey.com/en/products/detail/sparkfun-electronics/BATTERY-LIPO-2000MAH/10392774) |
-| **DC Barrel Jack Adapter (Final Choice)**  | Stable power delivery                                     | Requires external adapter                 | [$2.50 DigiKey](https://www.digikey.com/en/products/detail/cui-devices/PJ-002A/10392775) |
 
 **Final Selection: DC Barrel Jack Adapter**  
 *Rationale:* A DC barrel jack adapter was selected for its simplicity and ability to provide stable power from a wall adapter or external supply. This ensures consistent operation during extended use.
@@ -71,16 +66,13 @@ To improve functionality and robustness, the following additional components are
 4. **LED Indicators:**
    - Include LEDs for power status and Wi-Fi activity to aid debugging.
 
-5. **Reset Button:**
-   - Add a reset button to manually restart the ESP32 during testing or troubleshooting.
-
 ---
 
 ## **Responsibilities**
 
 1. **Data Collection:** Interface with all sensors in the system using I2C/SPI/UART protocols.
 2. **Wi-Fi Communication:** Use the ESP32's built-in Wi-Fi module to create a local network and transmit sensor data.
-3. **Power Management:** Regulate input voltage using an HT7333 regulator to ensure a stable 3.3V supply.
+3. **Power Management:** Regulate input voltage using an AMS1117-3.3 regulator to ensure a stable 3.3V supply.
 4. **Data Transmission:** Continuously update sensor readings on a GitHub-hosted webpage in real time.
 5. **Integration:** Ensure seamless compatibility between sensors and the microcontroller through proper pin allocation and library selection.
 
