@@ -12,13 +12,13 @@
       
       
       
-        <link rel="canonical" href="https://embedded-systems-design.github.io/template_report/subfolder/">
+        <link rel="canonical" href="https://embedded-systems-design.github.io/template_report/Component%20Selection/">
       
       
-        <link rel="prev" href="../charts/">
+        <link rel="prev" href="../Block%20Diagram/">
       
       
-        <link rel="next" href="another-subfile/">
+        <link rel="next" href="../charts/">
       
       
       <link rel="icon" href="../static/logo.png">
@@ -29,7 +29,7 @@
 
     
       
-        <title>This is the index to a subfolder - EGR314 Report Template</title>
+        <title>Component Selection - EGR314 Report Template</title>
       
     
     
@@ -92,6 +92,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#subsystem-documentation-wi-fi-enabled-data-collection-and-transmission" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -123,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              This is the index to a subfolder
+              Component Selection
             
           </span>
         </div>
@@ -229,9 +234,11 @@
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../Component%20Selection/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
     
@@ -263,13 +270,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../subfolder/" class="md-tabs__link">
           
   
     
@@ -374,9 +379,29 @@
       
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../Component%20Selection/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Component Selection
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -385,6 +410,108 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#major-component-selections" class="md-nav__link">
+    Major Component Selections
+  </a>
+  
+    <nav class="md-nav" aria-label="Major Component Selections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microcontroller-selection" class="md-nav__link">
+    Microcontroller Selection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-regulation" class="md-nav__link">
+    Power Regulation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-input" class="md-nav__link">
+    Power Input
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-components-to-enhance-subsystem" class="md-nav__link">
+    Additional Components to Enhance Subsystem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#responsibilities" class="md-nav__link">
+    Responsibilities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pin-allocation" class="md-nav__link">
+    Pin Allocation
+  </a>
+  
+    <nav class="md-nav" aria-label="Pin Allocation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esp32-peripheral-pin-assignments" class="md-nav__link">
+    ESP32 Peripheral Pin Assignments:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -412,8 +539,6 @@
       
   
   
-    
-  
   
     
     
@@ -426,64 +551,28 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
-              
+  
+  
+    <a href="../subfolder/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     Subfolder
   </span>
   
 
-            </a>
-            
-              <label class="md-nav__link md-nav__link--active" for="__nav_5">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            Subfolder
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="another-subfile/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    This is a secondary sub page
-  </span>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -506,6 +595,98 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#major-component-selections" class="md-nav__link">
+    Major Component Selections
+  </a>
+  
+    <nav class="md-nav" aria-label="Major Component Selections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microcontroller-selection" class="md-nav__link">
+    Microcontroller Selection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-regulation" class="md-nav__link">
+    Power Regulation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-input" class="md-nav__link">
+    Power Input
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-components-to-enhance-subsystem" class="md-nav__link">
+    Additional Components to Enhance Subsystem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#responsibilities" class="md-nav__link">
+    Responsibilities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pin-allocation" class="md-nav__link">
+    Pin Allocation
+  </a>
+  
+    <nav class="md-nav" aria-label="Pin Allocation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esp32-peripheral-pin-assignments" class="md-nav__link">
+    ESP32 Peripheral Pin Assignments:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -520,7 +701,7 @@
                   
 
   
-    <a href="https://github.com/embedded-systems-design/template_report/edit/main/docs/subfolder/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/embedded-systems-design/template_report/edit/main/docs/Component Selection.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -528,9 +709,199 @@
   
 
 
-  <h1>This is the index to a subfolder</h1>
-
-<p>Things to discuss</p>
+<h1 id="subsystem-documentation-wi-fi-enabled-data-collection-and-transmission">Subsystem Documentation: Wi-Fi-Enabled Data Collection and Transmission</h1>
+<h2 id="introduction"><strong>Introduction</strong></h2>
+<p>As part of our embedded systems design project, my subsystem is responsible for collecting data from all sensors in the system, transmitting it via a Wi-Fi network created by the ESP32 microcontroller, and updating this data in real-time on a GitHub-hosted webpage. This document outlines the selection of components for my subsystem, focusing on efficient power regulation, reliable wireless communication, and seamless integration with sensors.</p>
+<hr />
+<h2 id="major-component-selections"><strong>Major Component Selections</strong></h2>
+<h3 id="microcontroller-selection"><strong>Microcontroller Selection</strong></h3>
+<p>The ESP32 microcontroller is the core of this subsystem, providing Wi-Fi connectivity and the processing power needed to gather and transmit sensor data.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Option</strong></th>
+<th><strong>Pros</strong></th>
+<th><strong>Cons</strong></th>
+<th><strong>Unit Cost &amp; Link</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ESP32-S3-WROOM-1-N4 (Final Choice)</strong></td>
+<td>Built-in Wi-Fi/Bluetooth, supports I2C/SPI/UART, low power modes, 4MB Flash</td>
+<td>3.3V logic may require level shifters for some peripherals</td>
+<td><a href="https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N4/15571629">$3.40 DigiKey</a></td>
+</tr>
+<tr>
+<td>ESP8266</td>
+<td>Low cost, simple to use</td>
+<td>Limited GPIO pins, no dual-core processor</td>
+<td><a href="https://www.digikey.com/en/products/detail/espressif-systems/ESP8266EX/5904905">$2.50 DigiKey</a></td>
+</tr>
+<tr>
+<td>Raspberry Pi Pico W</td>
+<td>Dual-core processor, Wi-Fi support</td>
+<td>Higher power consumption, larger physical size</td>
+<td><a href="https://www.digikey.com/en/products/detail/raspberry-pi/PICO-W/17394693">$6.00 DigiKey</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Final Selection: ESP32-S3-WROOM-1-N4</strong><br />
+<em>Rationale:</em> The ESP32-S3-WROOM-1-N4 was selected due to its robust Wi-Fi capabilities, dual-core processor for multitasking, and compatibility with I2C/SPI protocols required for sensor interfacing. Its low power consumption and extensive library support make it ideal for real-time data transmission.</p>
+<hr />
+<h3 id="power-regulation"><strong>Power Regulation</strong></h3>
+<p>To ensure stable operation of the ESP32 and sensors, a voltage regulator is required to step down the input voltage to 3.3V.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Option</strong></th>
+<th><strong>Pros</strong></th>
+<th><strong>Cons</strong></th>
+<th><strong>Unit Cost &amp; Link</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AMS1117-3.3</td>
+<td>Simple design</td>
+<td>Low efficiency</td>
+<td><a href="https://www.digikey.com/en/products/detail/advanced-monolithic-systems/AMS1117-3.3/10392769">$0.35 DigiKey</a></td>
+</tr>
+<tr>
+<td>LM2596</td>
+<td>High efficiency</td>
+<td>Larger physical size</td>
+<td><a href="https://www.digikey.com/en/products/detail/texas-instruments/LM2596T-5.0-NOPB/10392771">$1.50 DigiKey</a></td>
+</tr>
+<tr>
+<td><strong>HT7333 (Final Choice)</strong></td>
+<td>Ultra-low quiescent current</td>
+<td>Limited current output</td>
+<td><a href="https://www.digikey.com/en/products/detail/holtek-semiconductor/HT7333-A/10392772">$0.50 DigiKey</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Final Selection: HT7333</strong><br />
+<em>Rationale:</em> The HT7333 was chosen for its low quiescent current and suitability for low-power embedded systems. It ensures efficient voltage regulation while minimizing heat dissipation.</p>
+<hr />
+<h3 id="power-input"><strong>Power Input</strong></h3>
+<p>The subsystem requires a reliable power source capable of providing sufficient current for the ESP32 and sensors.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Option</strong></th>
+<th><strong>Pros</strong></th>
+<th><strong>Cons</strong></th>
+<th><strong>Unit Cost &amp; Link</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>USB Power Supply</td>
+<td>Widely available</td>
+<td>Requires USB cable</td>
+<td><a href="https://www.digikey.com/en/products/detail/cui-devices/VUB240-SMT-USB-MICRO-B/10392773">$5.00 DigiKey</a></td>
+</tr>
+<tr>
+<td>Li-Ion Battery Pack</td>
+<td>Portable</td>
+<td>Requires charging circuit</td>
+<td><a href="https://www.digikey.com/en/products/detail/sparkfun-electronics/BATTERY-LIPO-2000MAH/10392774">$10.00 DigiKey</a></td>
+</tr>
+<tr>
+<td><strong>DC Barrel Jack Adapter (Final Choice)</strong></td>
+<td>Stable power delivery</td>
+<td>Requires external adapter</td>
+<td><a href="https://www.digikey.com/en/products/detail/cui-devices/PJ-002A/10392775">$2.50 DigiKey</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Final Selection: DC Barrel Jack Adapter</strong><br />
+<em>Rationale:</em> A DC barrel jack adapter was selected for its simplicity and ability to provide stable power from a wall adapter or external supply. This ensures consistent operation during extended use.</p>
+<hr />
+<h2 id="additional-components-to-enhance-subsystem"><strong>Additional Components to Enhance Subsystem</strong></h2>
+<p>To improve functionality and robustness, the following additional components are recommended:</p>
+<ol>
+<li><strong>Capacitors (Decoupling):</strong></li>
+<li>
+<p>Add 10µF and 0.1µF capacitors near the ESP32 and voltage regulator to reduce noise and stabilize voltage.</p>
+</li>
+<li>
+<p><strong>Level Shifters:</strong></p>
+</li>
+<li>
+<p>Ensure compatibility between sensors operating at 5V logic levels and the ESP32's 3.3V GPIO pins.</p>
+</li>
+<li>
+<p><strong>Heat Sink (Optional):</strong></p>
+</li>
+<li>
+<p>Improve thermal performance of the voltage regulator during extended operation.</p>
+</li>
+<li>
+<p><strong>LED Indicators:</strong></p>
+</li>
+<li>
+<p>Include LEDs for power status and Wi-Fi activity to aid debugging.</p>
+</li>
+<li>
+<p><strong>Reset Button:</strong></p>
+</li>
+<li>Add a reset button to manually restart the ESP32 during testing or troubleshooting.</li>
+</ol>
+<hr />
+<h2 id="responsibilities"><strong>Responsibilities</strong></h2>
+<ol>
+<li><strong>Data Collection:</strong> Interface with all sensors in the system using I2C/SPI/UART protocols.</li>
+<li><strong>Wi-Fi Communication:</strong> Use the ESP32's built-in Wi-Fi module to create a local network and transmit sensor data.</li>
+<li><strong>Power Management:</strong> Regulate input voltage using an HT7333 regulator to ensure a stable 3.3V supply.</li>
+<li><strong>Data Transmission:</strong> Continuously update sensor readings on a GitHub-hosted webpage in real time.</li>
+<li><strong>Integration:</strong> Ensure seamless compatibility between sensors and the microcontroller through proper pin allocation and library selection.</li>
+</ol>
+<hr />
+<h2 id="pin-allocation"><strong>Pin Allocation</strong></h2>
+<h3 id="esp32-peripheral-pin-assignments">ESP32 Peripheral Pin Assignments:</h3>
+<table>
+<thead>
+<tr>
+<th>Peripheral</th>
+<th>Pin Assignment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I2C SDA</td>
+<td>GPIO21</td>
+</tr>
+<tr>
+<td>I2C SCL</td>
+<td>GPIO22</td>
+</tr>
+<tr>
+<td>SPI MOSI</td>
+<td>GPIO23</td>
+</tr>
+<tr>
+<td>SPI MISO</td>
+<td>GPIO19</td>
+</tr>
+<tr>
+<td>SPI SCLK</td>
+<td>GPIO18</td>
+</tr>
+<tr>
+<td>UART TX/RX</td>
+<td>Debugging Pins</td>
+</tr>
+<tr>
+<td>Power Input</td>
+<td>VIN via DC Barrel Jack</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="conclusion"><strong>Conclusion</strong></h2>
+<p>The selected components ensure efficient integration of all sensors with the ESP32 microcontroller while meeting project specifications for real-time data collection and transmission to a GitHub-hosted webpage.</p>
 
 
 
@@ -558,7 +929,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../charts/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Charts" rel="prev">
+          <a href="../Block%20Diagram/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Block Diagram" rel="prev">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -568,20 +939,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Charts
+                Block Diagram
               </div>
             </div>
           </a>
         
         
           
-          <a href="another-subfile/" class="md-footer__link md-footer__link--next" aria-label="Next: This is a secondary sub page" rel="next">
+          <a href="../charts/" class="md-footer__link md-footer__link--next" aria-label="Next: Charts" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                This is a secondary sub page
+                Charts
               </div>
             </div>
             <div class="md-footer__button md-icon">
