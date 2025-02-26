@@ -17,7 +17,7 @@ title: ESP32 Table
 | Supply Voltage Range                          | 3.0 V to 3.6 |
 | Maximum GPIO current (per pin)                | Not explicitly stated but typically around 40mA max |
 | Supports External Interrupts?                 | Yes                                                                                                        |
-| Required Programming Hardware, Cost, URL      | USB-to-UART bridge (e.g., FTDI FT232RL); pricing available via [vendor link](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N4/16162639). |
+| Required Programming Hardware, Cost, URL      | USB3131-30-0230-A Micro-USB Port; pricing available via [vendor link](https://www.digikey.com/en/products/detail/gct/USB3131-30-0230-A/9859642). |
 
 | Module         | # Available | Needed | Associated Pins                                                                                                                                                                                                                         |
 |----------------|-------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
