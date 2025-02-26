@@ -1,5 +1,5 @@
 ---
-title: ESP32-S3-WROOM-1-N4 Specifications
+title: ESP32 Table
 ---
 
 | ESP Info                                      | Answer                                                                                                     |
@@ -21,7 +21,7 @@ title: ESP32-S3-WROOM-1-N4 Specifications
 
 | Module         | # Available | Needed | Associated Pins                                                                                                                                                                                                                         |
 |----------------|-------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| UART           | 2           | ?      | UART0: TXD0 (GPIO43), RXD0 (GPIO44); UART1: Configurable                                                                                                                                                                               |
+| UART           | 2           | 2      | UART0: TXD0 (GPIO43), RXD0 (GPIO44); UART1: Configurable                                                                                                                                                                               |
 | External SPI   | 4           | ?      | SPI2 (HSPI): SCK (GPIO36), MISO (GPIO37), MOSI (GPIO35), CS0 (GPIO34); SPI3 (VSPI): SCK (GPIO18), MISO (GPIO17), MOSI (GPIO8), CS0 (GPIO11); SPI0 and SPI1 are used internally for flash and PSRAM                                     |
 | I2C            | 2           | ?      | I2C0: SCL (GPIO1), SDA (GPIO0); I2C1: SCL (GPIO3), SDA (GPIO2)                                                                                                                                                                         |
 | GPIO           | 45          | ?      | GPIO0 to GPIO44; Note: Some GPIOs have specific functions or are used internally. Refer to the [ESP32-S3 datasheet](https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf) for detailed information. |
