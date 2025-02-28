@@ -800,7 +800,7 @@
 <tbody>
 <tr>
 <td><strong>ESP32-S3-WROOM-1-N4 (Final Choice)</strong></td>
-<td>Built-in Wi-Fi/Bluetooth, supports I2C/SPI/UART, low power modes, 4MB Flash</td>
+<td>Built-in Wi-Fi/Bluetooth, supports multiple serial protocols, low power modes, 4MB Flash</td>
 <td>3.3V logic may require level shifters for some peripherals</td>
 <td><a href="https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N4/16162639">$2.95 DigiKey</a></td>
 </tr>
@@ -819,7 +819,7 @@
 </tbody>
 </table>
 <p><strong>Final Selection: ESP32-S3-WROOM-1-N4</strong><br />
-<em>Rationale:</em> The ESP32-S3-WROOM-1-N4 was selected due to its robust Wi-Fi capabilities, dual-core processor for multitasking, and compatibility with I2C/SPI protocols required for sensor interfacing. Its low power consumption and extensive library support make it ideal for real-time data transmission.</p>
+<em>Rationale:</em> The ESP32-S3-WROOM-1-N4 was selected due to its robust Wi-Fi capabilities, dual-core processor for multitasking, and excellent library support for embedded data transmission tasks.</p>
 <hr />
 <h3 id="power-regulation"><strong>Power Regulation</strong></h3>
 <p>To ensure stable operation of the ESP32 and sensors, a voltage regulator is required to step down the input voltage to 3.3V.</p>
@@ -834,7 +834,13 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>AMS1117-3.3 (Final Choice)</strong></td>
+<td><strong>AP63203WU_7 (Final Choice)</strong></td>
+<td>High efficiency, compact size, low quiescent current</td>
+<td>Slightly higher cost than linear regulators</td>
+<td><a href="https://www.digikey.com/en/products/detail/diodes-incorporated/AP63203WU-7/9858426">$1.38 DigiKey</a></td>
+</tr>
+<tr>
+<td>AMS1117-3.3</td>
 <td>Simple design</td>
 <td>Low efficiency</td>
 <td><a href="https://www.digikey.com/en/products/detail/umw/AMS1117-3-3/17635254">$0.68 DigiKey</a></td>
@@ -845,16 +851,10 @@
 <td>Larger physical size</td>
 <td><a href="https://www.digikey.com/en/products/detail/texas-instruments/LM2596S-ADJ-NOPB/363705">$6.70 DigiKey</a></td>
 </tr>
-<tr>
-<td>HT7333</td>
-<td>Ultra-low quiescent current</td>
-<td>Limited current output</td>
-<td><a href="https://www.digikey.com/en/products/detail/umw/HT7333-A/17635230">$0.65 DigiKey</a></td>
-</tr>
 </tbody>
 </table>
-<p><strong>Final Selection: HT7333</strong><br />
-<em>Rationale:</em> The AMS1117-3.3 was selected as the optimal voltage regulator for this subsystem due to its low cost, simplicity, compatibility with surface-mount requirements, and ability to meet the current demands of the ESP32 microcontroller and connected sensors.</p>
+<p><strong>Final Selection: AP63203WU_7</strong><br />
+<em>Rationale:</em> The AP63203WU_7 was selected due to its high efficiency, low power loss, compact size, and suitability for surface mount applications, making it ideal for the power requirements of the ESP32 and associated components.</p>
 <hr />
 <h3 id="power-input"><strong>Power Input</strong></h3>
 <p>The subsystem requires a reliable power source capable of providing sufficient current for the ESP32 and sensors.</p>
@@ -867,12 +867,6 @@
 <li><strong>Capacitors (Decoupling):</strong></li>
 <li>
 <p>Add 10µF and 0.1µF capacitors near the ESP32 and voltage regulator to reduce noise and stabilize voltage.</p>
-</li>
-<li>
-<p><strong>Level Shifters:</strong></p>
-</li>
-<li>
-<p>Ensure compatibility between sensors operating at 5V logic levels and the ESP32's 3.3V GPIO pins.</p>
 </li>
 <li>
 <p><strong>Heat Sink (Optional):</strong></p>
@@ -888,11 +882,11 @@
 <hr />
 <h2 id="responsibilities"><strong>Responsibilities</strong></h2>
 <ol>
-<li><strong>Data Collection:</strong> Interface with all sensors in the system using I2C/SPI/UART protocols.</li>
+<li><strong>Data Collection:</strong> Collect sensor data using UART (serial communication).</li>
 <li><strong>Wi-Fi Communication:</strong> Use the ESP32's built-in Wi-Fi module to create a local network and transmit sensor data.</li>
-<li><strong>Power Management:</strong> Regulate input voltage using an AMS1117-3.3 regulator to ensure a stable 3.3V supply.</li>
+<li><strong>Power Management:</strong> Regulate input voltage using the AP63203WU_7 regulator to ensure a stable 3.3V supply.</li>
 <li><strong>Data Transmission:</strong> Continuously update sensor readings on a GitHub-hosted webpage in real time.</li>
-<li><strong>Integration:</strong> Ensure seamless compatibility between sensors and the microcontroller through proper pin allocation and library selection.</li>
+<li><strong>Integration:</strong> Ensure seamless compatibility between sensors and the microcontroller through proper pin allocation and power management.</li>
 </ol>
 <hr />
 <h2 id="pin-allocation"><strong>Pin Allocation</strong></h2>
@@ -906,28 +900,20 @@
 </thead>
 <tbody>
 <tr>
-<td>I2C SDA</td>
-<td>GPIO21</td>
+<td>UART TX</td>
+<td>GPIO1</td>
 </tr>
 <tr>
-<td>I2C SCL</td>
-<td>GPIO22</td>
+<td>UART RX</td>
+<td>GPIO3</td>
 </tr>
 <tr>
-<td>SPI MOSI</td>
-<td>GPIO23</td>
-</tr>
-<tr>
-<td>SPI MISO</td>
+<td>Micro USB D-</td>
 <td>GPIO19</td>
 </tr>
 <tr>
-<td>SPI SCLK</td>
-<td>GPIO18</td>
-</tr>
-<tr>
-<td>UART TX/RX</td>
-<td>Debugging Pins</td>
+<td>Micro USB D+</td>
+<td>GPIO20</td>
 </tr>
 <tr>
 <td>Power Input</td>
@@ -937,7 +923,7 @@
 </table>
 <hr />
 <h2 id="conclusion"><strong>Conclusion</strong></h2>
-<p>The selected components ensure efficient integration of all sensors with the ESP32 microcontroller while meeting project specifications for real-time data collection and transmission to a GitHub-hosted webpage.</p>
+<p>The selected components ensure efficient integration of all sensors with the ESP32 microcontroller while meeting project specifications for real-time data collection and transmission to a GitHub-hosted webpage. By selecting the <strong>AP63203WU_7</strong> regulator, the subsystem benefits from improved power efficiency, and by limiting communication to <strong>UART only</strong>, the design is simplified for reliable data transfer.</p>
 
 
 
