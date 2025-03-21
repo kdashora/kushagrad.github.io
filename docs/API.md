@@ -1,4 +1,4 @@
-# **API Messaging Compliance Verification for Internet Communication Subsystem**
+# **API Messaging Compliance**
 
 This document outlines the message types relevant to the Internet Communication Subsystem, including detailed tables for each message type, compliance verification, and implementation details.
 
