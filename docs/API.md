@@ -76,9 +76,9 @@ The message receiver will:
 
 2. Process messages intended for Kushagra:
 
-   - For "Sensor Data Transmission," extract temperature and humidity data and forward it to the web interface.
+    - For "Sensor Data Transmission," extract temperature and humidity data and forward it to the web interface.
 
-   - For "Alignment Frequency Confirmation," log the confirmation status.
+    - For "Alignment Frequency Confirmation," log the confirmation status.
 
 3. Trash messages sent by Kushagra that loop back to the subsystem.
 
