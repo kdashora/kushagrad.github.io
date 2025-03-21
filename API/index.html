@@ -12,13 +12,13 @@
       
       
       
-        <link rel="canonical" href="https://embedded-systems-design.github.io/template_report/Component%20Selection/">
+        <link rel="canonical" href="https://embedded-systems-design.github.io/template_report/API/">
       
       
-        <link rel="prev" href="../Block%20Diagram/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../ESP32%20Table/">
+        <link rel="next" href="../Bill%20Of%20Materials/">
       
       
       <link rel="icon" href="../static/logo.png">
@@ -29,7 +29,7 @@
 
     
       
-        <title>Component Selection - EGR314 Report Template</title>
+        <title>API Messaging Compliance Verification for Internet Communication Subsystem - EGR314 Report Template</title>
       
     
     
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#subsystem-documentation-wi-fi-enabled-data-collection-and-transmission" class="md-skip">
+        <a href="#api-messaging-compliance-verification-for-internet-communication-subsystem" class="md-skip">
           Skip to content
         </a>
       
@@ -128,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Component Selection
+              API Messaging Compliance Verification for Internet Communication Subsystem
             
           </span>
         </div>
@@ -217,9 +217,11 @@
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../API/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
     
@@ -268,11 +270,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../Component%20Selection/" class="md-tabs__link">
         
   
     
@@ -411,9 +411,29 @@
       
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../API/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    API Messaging Compliance Verification for Internet Communication Subsystem
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -422,6 +442,161 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#messages-sent-or-received" class="md-nav__link">
+    Messages Sent or Received
+  </a>
+  
+    <nav class="md-nav" aria-label="Messages Sent or Received">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#messages-sent" class="md-nav__link">
+    Messages Sent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#messages-received" class="md-nav__link">
+    Messages Received
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-tables" class="md-nav__link">
+    Message Type Tables
+  </a>
+  
+    <nav class="md-nav" aria-label="Message Type Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#message-type-1-sensor-data-transmission" class="md-nav__link">
+    Message Type 1: Sensor Data Transmission
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-type-3-alignment-frequency" class="md-nav__link">
+    Message Type 3: Alignment Frequency
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-type-4-alignment-frequency-confirmation" class="md-nav__link">
+    Message Type 4: Alignment Frequency Confirmation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handling-code-implementation" class="md-nav__link">
+    Handling Code Implementation
+  </a>
+  
+    <nav class="md-nav" aria-label="Handling Code Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#message-receiver" class="md-nav__link">
+    Message Receiver
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-sender" class="md-nav__link">
+    Message Sender
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-messages" class="md-nav__link">
+    Example Messages
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Messages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-message-formats" class="md-nav__link">
+    Example Message Formats
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Message Formats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensor-data-transmission" class="md-nav__link">
+    Sensor Data Transmission
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alignment-frequency" class="md-nav__link">
+    Alignment Frequency
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alignment-frequency-confirmation" class="md-nav__link">
+    Alignment Frequency Confirmation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -468,29 +643,9 @@
       
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Component Selection
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Component%20Selection/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -499,108 +654,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    Introduction
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#major-component-selections" class="md-nav__link">
-    Major Component Selections
-  </a>
-  
-    <nav class="md-nav" aria-label="Major Component Selections">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#microcontroller-selection" class="md-nav__link">
-    Microcontroller Selection
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#power-regulation" class="md-nav__link">
-    Power Regulation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#power-input" class="md-nav__link">
-    Power Input
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-components-to-enhance-subsystem" class="md-nav__link">
-    Additional Components to Enhance Subsystem
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#responsibilities" class="md-nav__link">
-    Responsibilities
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pin-allocation" class="md-nav__link">
-    Pin Allocation
-  </a>
-  
-    <nav class="md-nav" aria-label="Pin Allocation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#esp32-peripheral-pin-assignments" class="md-nav__link">
-    ESP32 Peripheral Pin Assignments:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -713,37 +766,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    Introduction
+  <a href="#messages-sent-or-received" class="md-nav__link">
+    Messages Sent or Received
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#major-component-selections" class="md-nav__link">
-    Major Component Selections
-  </a>
-  
-    <nav class="md-nav" aria-label="Major Component Selections">
+    <nav class="md-nav" aria-label="Messages Sent or Received">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#microcontroller-selection" class="md-nav__link">
-    Microcontroller Selection
+  <a href="#messages-sent" class="md-nav__link">
+    Messages Sent
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#power-regulation" class="md-nav__link">
-    Power Regulation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#power-input" class="md-nav__link">
-    Power Input
+  <a href="#messages-received" class="md-nav__link">
+    Messages Received
   </a>
   
 </li>
@@ -754,30 +793,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#additional-components-to-enhance-subsystem" class="md-nav__link">
-    Additional Components to Enhance Subsystem
+  <a href="#message-type-tables" class="md-nav__link">
+    Message Type Tables
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#responsibilities" class="md-nav__link">
-    Responsibilities
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pin-allocation" class="md-nav__link">
-    Pin Allocation
-  </a>
-  
-    <nav class="md-nav" aria-label="Pin Allocation">
+    <nav class="md-nav" aria-label="Message Type Tables">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#esp32-peripheral-pin-assignments" class="md-nav__link">
-    ESP32 Peripheral Pin Assignments:
+  <a href="#message-type-1-sensor-data-transmission" class="md-nav__link">
+    Message Type 1: Sensor Data Transmission
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-type-3-alignment-frequency" class="md-nav__link">
+    Message Type 3: Alignment Frequency
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-type-4-alignment-frequency-confirmation" class="md-nav__link">
+    Message Type 4: Alignment Frequency Confirmation
   </a>
   
 </li>
@@ -788,9 +827,76 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
+  <a href="#handling-code-implementation" class="md-nav__link">
+    Handling Code Implementation
   </a>
+  
+    <nav class="md-nav" aria-label="Handling Code Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#message-receiver" class="md-nav__link">
+    Message Receiver
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-sender" class="md-nav__link">
+    Message Sender
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-messages" class="md-nav__link">
+    Example Messages
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Messages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-message-formats" class="md-nav__link">
+    Example Message Formats
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Message Formats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensor-data-transmission" class="md-nav__link">
+    Sensor Data Transmission
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alignment-frequency" class="md-nav__link">
+    Alignment Frequency
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alignment-frequency-confirmation" class="md-nav__link">
+    Alignment Frequency Confirmation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -809,7 +915,7 @@
                   
 
   
-    <a href="https://github.com/embedded-systems-design/template_report/edit/main/docs/Component Selection.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/embedded-systems-design/template_report/edit/main/docs/API.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -817,167 +923,197 @@
   
 
 
-<h1 id="subsystem-documentation-wi-fi-enabled-data-collection-and-transmission">Subsystem Documentation: Wi-Fi-Enabled Data Collection and Transmission</h1>
-<h2 id="introduction"><strong>Introduction</strong></h2>
-<p>As part of our embedded systems design project, my subsystem is responsible for collecting data from all sensors in the system, transmitting it via a Wi-Fi network created by the ESP32 microcontroller, and updating this data in real-time on a GitHub-hosted webpage. This document outlines the selection of components for my subsystem, focusing on efficient power regulation, reliable wireless communication, and seamless integration with sensors.</p>
+<h1 id="api-messaging-compliance-verification-for-internet-communication-subsystem"><strong>API Messaging Compliance Verification for Internet Communication Subsystem</strong></h1>
+<p>This document outlines the message types relevant to the Internet Communication Subsystem, including detailed tables for each message type, compliance verification, and implementation details.</p>
 <hr />
-<h2 id="major-component-selections"><strong>Major Component Selections</strong></h2>
-<h3 id="microcontroller-selection"><strong>Microcontroller Selection</strong></h3>
-<p>The ESP32 microcontroller is the core of this subsystem, providing Wi-Fi connectivity and the processing power needed to gather and transmit sensor data.</p>
-<table>
-<thead>
-<tr>
-<th><strong>Option</strong></th>
-<th><strong>Pros</strong></th>
-<th><strong>Cons</strong></th>
-<th><strong>Unit Cost &amp; Link</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a class="glightbox" href="../subfolder/ESP32.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="ESP32-S3-WROOM-1-N4" src="../subfolder/ESP32.jpg" /></a> <br> <strong>ESP32-S3-WROOM-1-N4 (Final Choice)</strong></td>
-<td>Built-in Wi-Fi/Bluetooth, supports multiple serial protocols, low power modes, 4MB Flash</td>
-<td>3.3V logic may require level shifters for some peripherals</td>
-<td><a href="https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N4/16162639">$2.95 DigiKey</a></td>
-</tr>
-<tr>
-<td><a class="glightbox" href="../subfolder/ESP8266.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="ESP8266" src="../subfolder/ESP8266.jpg" /></a> <br> <strong>ESP8266</strong></td>
-<td>Low cost, simple to use</td>
-<td>Limited GPIO pins, no dual-core processor</td>
-<td><a href="https://www.digikey.com/en/products/detail/espressif-systems/ESP8266EX/8028401">$1.60 DigiKey</a></td>
-</tr>
-<tr>
-<td><a class="glightbox" href="../subfolder/Raspberry.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Raspberry Pi Pico W" src="../subfolder/Raspberry.jpg" /></a> <br> <strong>Raspberry Pi Pico W</strong></td>
-<td>Dual-core processor, Wi-Fi support</td>
-<td>Higher power consumption, larger physical size</td>
-<td><a href="https://www.digikey.com/en/products/detail/raspberry-pi/SC0918/16627943">$6.00 DigiKey</a></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Final Selection: ESP32-S3-WROOM-1-N4</strong><br />
-<em>Rationale:</em> The ESP32-S3-WROOM-1-N4 was selected due to its robust Wi-Fi capabilities, dual-core processor for multitasking, and excellent library support for embedded data transmission tasks.</p>
-<hr />
-<h3 id="power-regulation"><strong>Power Regulation</strong></h3>
-<p>To ensure stable operation of the ESP32 and sensors, a voltage regulator is required to step down the input voltage to 3.3V.</p>
-<table>
-<thead>
-<tr>
-<th><strong>Option</strong></th>
-<th><strong>Pros</strong></th>
-<th><strong>Cons</strong></th>
-<th><strong>Unit Cost &amp; Link</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a class="glightbox" href="../subfolder/AP63203.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="AP63203WU_7" src="../subfolder/AP63203.jpg" /></a> <br> <strong>AP63203WU_7 (Final Choice)</strong></td>
-<td>High efficiency, compact size, low quiescent current</td>
-<td>Slightly higher cost than linear regulators</td>
-<td><a href="https://www.digikey.com/en/products/detail/diodes-incorporated/AP63203WU-7/9858426">$1.38 DigiKey</a></td>
-</tr>
-<tr>
-<td><a class="glightbox" href="../subfolder/AMS1117.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="AMS1117-3.3" src="../subfolder/AMS1117.jpg" /></a> <br> <strong>AMS1117-3.3</strong></td>
-<td>Simple design</td>
-<td>Low efficiency</td>
-<td><a href="https://www.digikey.com/en/products/detail/umw/AMS1117-3-3/17635254">$0.68 DigiKey</a></td>
-</tr>
-<tr>
-<td><a class="glightbox" href="../subfolder/LM2596.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LM2596" src="../subfolder/LM2596.jpg" /></a> <br> <strong>LM2596</strong></td>
-<td>High efficiency</td>
-<td>Larger physical size</td>
-<td><a href="https://www.digikey.com/en/products/detail/texas-instruments/LM2596S-ADJ-NOPB/363705">$6.70 DigiKey</a></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Final Selection: AP63203WU_7</strong><br />
-<em>Rationale:</em> The AP63203WU_7 was selected due to its high efficiency, low power loss, compact size, and suitability for surface mount applications, making it ideal for the power requirements of the ESP32 and associated components.</p>
-<hr />
-<h3 id="power-input"><strong>Power Input</strong></h3>
-<p>The subsystem requires a reliable power source capable of providing sufficient current for the ESP32 and sensors.</p>
-<table>
-<thead>
-<tr>
-<th><strong>Option</strong></th>
-<th><strong>Pros</strong></th>
-<th><strong>Cons</strong></th>
-<th><strong>Unit Cost &amp; Link</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a class="glightbox" href="../subfolder/DC_Adapter.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="DC Barrel Jack Adapter" src="../subfolder/DC_Adapter.jpg" /></a> <br> <strong>DC Barrel Jack Adapter (Final Choice)</strong></td>
-<td>Simple, reliable, provides stable power</td>
-<td>Requires external adapter</td>
-<td><a href="https://www.digikey.com/en/products/detail/sparkfun-electronics/PRT-10811/1631950">$1.50 DigiKey</a></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Final Selection: DC Barrel Jack Adapter</strong><br />
-<em>Rationale:</em> A DC barrel jack adapter was selected for its simplicity and ability to provide stable power from a wall adapter or external supply. This ensures consistent operation during extended use.</p>
-<hr />
-<h2 id="additional-components-to-enhance-subsystem"><strong>Additional Components to Enhance Subsystem</strong></h2>
-<p>To improve functionality and robustness, the following additional components are recommended:</p>
+<h2 id="messages-sent-or-received"><strong>Messages Sent or Received</strong></h2>
+<h3 id="messages-sent"><strong>Messages Sent</strong></h3>
 <ol>
-<li><strong>Capacitors (Decoupling):</strong></li>
+<li><strong>Message Type 3: Alignment Frequency</strong>  </li>
+<li>Sent to: Alex  </li>
+<li>Purpose: Set the solar panel alignment frequency.</li>
+</ol>
+<h3 id="messages-received"><strong>Messages Received</strong></h3>
+<ol>
+<li><strong>Message Type 1: Sensor Data Transmission</strong>  </li>
+<li>Sent by: Ian (broadcast to all subsystems)  </li>
 <li>
-<p>Add 10µF and 0.1µF capacitors near the ESP32 and voltage regulator to reduce noise and stabilize voltage.</p>
+<p>Purpose: Receive environmental data (temperature and humidity) for display on the web interface.</p>
 </li>
 <li>
-<p><strong>Heat Sink (Optional):</strong></p>
+<p><strong>Message Type 4: Alignment Frequency Confirmation</strong>  </p>
 </li>
-<li>
-<p>Improve thermal performance of the voltage regulator during extended operation.</p>
-</li>
-<li>
-<p><strong>LED Indicators:</strong></p>
-</li>
-<li>Include LEDs for power status and Wi-Fi activity to aid debugging.</li>
+<li>Sent by: Alex  </li>
+<li>Purpose: Confirm receipt of alignment frequency update.</li>
 </ol>
 <hr />
-<h2 id="responsibilities"><strong>Responsibilities</strong></h2>
-<ol>
-<li><strong>Data Collection:</strong> Collect sensor data using UART (serial communication).</li>
-<li><strong>Wi-Fi Communication:</strong> Use the ESP32's built-in Wi-Fi module to create a local network and transmit sensor data.</li>
-<li><strong>Power Management:</strong> Regulate input voltage using the AP63203WU_7 regulator to ensure a stable 3.3V supply.</li>
-<li><strong>Data Transmission:</strong> Continuously update sensor readings on a GitHub-hosted webpage in real time.</li>
-<li><strong>Integration:</strong> Ensure seamless compatibility between sensors and the microcontroller through proper pin allocation and power management.</li>
-</ol>
-<hr />
-<h2 id="pin-allocation"><strong>Pin Allocation</strong></h2>
-<h3 id="esp32-peripheral-pin-assignments">ESP32 Peripheral Pin Assignments:</h3>
+<h2 id="message-type-tables"><strong>Message Type Tables</strong></h2>
+<h3 id="message-type-1-sensor-data-transmission"><strong>Message Type 1: Sensor Data Transmission</strong></h3>
+<p>Message type for receiving environmental data, including temperature and humidity, broadcasted to all subsystems.</p>
 <table>
 <thead>
 <tr>
-<th>Peripheral</th>
-<th>Pin Assignment</th>
+<th>Byte(s)</th>
+<th>Variable Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Min Value</th>
+<th>Max Value</th>
+<th>Example Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>UART TX</td>
-<td>GPIO1</td>
+<td>1</td>
+<td><code>message_type</code></td>
+<td><code>uint8_t</code></td>
+<td>Message identifier</td>
+<td>0</td>
+<td>255</td>
+<td>0x01</td>
 </tr>
 <tr>
-<td>UART RX</td>
-<td>GPIO3</td>
+<td>2-3</td>
+<td><code>temperature</code></td>
+<td><code>int16_t</code></td>
+<td>Environmental temperature</td>
+<td>-40</td>
+<td>+125</td>
+<td>+70</td>
 </tr>
 <tr>
-<td>Micro USB D-</td>
-<td>GPIO19</td>
-</tr>
-<tr>
-<td>Micro USB D+</td>
-<td>GPIO20</td>
-</tr>
-<tr>
-<td>Power Input</td>
-<td>VIN via DC Barrel Jack</td>
+<td>4-5</td>
+<td><code>humidity</code></td>
+<td><code>uint16_t</code></td>
+<td>Environmental humidity</td>
+<td>0</td>
+<td>100</td>
+<td>+30</td>
 </tr>
 </tbody>
 </table>
+<ul>
+<li><strong>Purpose</strong>: Display real-time environmental data on the web interface.</li>
+<li><strong>Example Message</strong>: <code>[0x01] [+70] [+30]</code></li>
+</ul>
 <hr />
-<h2 id="conclusion"><strong>Conclusion</strong></h2>
-<p>The selected components ensure efficient integration of all sensors with the ESP32 microcontroller while meeting project specifications for real-time data collection and transmission to a GitHub-hosted webpage. By selecting the <strong>AP63203WU_7</strong> regulator, the subsystem benefits from improved power efficiency, and by limiting communication to <strong>UART only</strong>, the design is simplified for reliable data transfer.</p>
+<h3 id="message-type-3-alignment-frequency"><strong>Message Type 3: Alignment Frequency</strong></h3>
+<p>Message type for sending a command to set the solar panel alignment frequency.</p>
+<table>
+<thead>
+<tr>
+<th>Byte(s)</th>
+<th>Variable Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Min Value</th>
+<th>Max Value</th>
+<th>Example Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>message_type</code></td>
+<td><code>uint8_t</code></td>
+<td>Message identifier</td>
+<td>0</td>
+<td>255</td>
+<td>0x03</td>
+</tr>
+<tr>
+<td>2-3</td>
+<td><code>alignment_frequency</code></td>
+<td><code>uint16_t</code></td>
+<td>Panel alignment frequency (secs)</td>
+<td>1</td>
+<td>65535</td>
+<td>300</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Purpose</strong>: Optimize solar panel performance by adjusting alignment intervals.</li>
+<li><strong>Example Message</strong>: <code>[0x03][300]</code></li>
+</ul>
+<hr />
+<h3 id="message-type-4-alignment-frequency-confirmation"><strong>Message Type 4: Alignment Frequency Confirmation</strong></h3>
+<p>Message type for confirming receipt of an alignment frequency update.</p>
+<table>
+<thead>
+<tr>
+<th>Byte(s)</th>
+<th>Variable Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Min Value</th>
+<th>Max Value</th>
+<th>Example Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>message_type</code></td>
+<td><code>uint8_t</code></td>
+<td>Message identifier</td>
+<td>0</td>
+<td>255</td>
+<td>0x04</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>confirmation_code</code></td>
+<td><code>uint8_t</code></td>
+<td>Confirmation status (e.g., success or error code)</td>
+<td>0</td>
+<td>255</td>
+<td>200</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Purpose</strong>: Ensure successful communication between subsystems.</li>
+<li><strong>Example Message</strong>: <code>[0x04][200]</code></li>
+</ul>
+<hr />
+<h2 id="handling-code-implementation"><strong>Handling Code Implementation</strong></h2>
+<h3 id="message-receiver">Message Receiver</h3>
+<p>The message receiver will:
+1. Handle all incoming messages over the UART network.
+2. Process messages intended for Kushagra:
+   - For "Sensor Data Transmission," extract temperature and humidity data and forward it to the web interface.
+   - For "Alignment Frequency Confirmation," log the confirmation status.
+3. Trash messages sent by Kushagra that loop back to the subsystem.
+4. Ignore malformed messages or those exceeding buffer size.</p>
+<h3 id="message-sender">Message Sender</h3>
+<p>The message sender will:
+1. Format all outgoing messages with proper prefix, suffix, sender, receiver, and data fields.
+2. Send example messages with time-varying data for testing purposes.
+3. Prioritize forwarding received messages over sending new ones.
+4. Limit sending rate using timers or interrupts.</p>
+<hr />
+<h2 id="example-messages">Example Messages</h2>
+<h3 id="example-message-formats">Example Message Formats</h3>
+<h4 id="sensor-data-transmission">Sensor Data Transmission</h4>
+<p>Byte Sequence:
+[0x01] [+70] [+30]
+Explanation:
+Byte 1 (message_type): Sensor Data Transmission (0x01)
+Byte 2-3 (temperature): Environmental temperature (+70°F)
+Byte 4-5 (humidity): Environmental humidity (+30%)</p>
+<h4 id="alignment-frequency">Alignment Frequency</h4>
+<p>Byte Sequence:
+[0x03]
+Explanation:
+Byte 1 (message_type): Alignment Frequency Command (0x03)
+Byte 2-3 (alignment_frequency): Update interval (300 seconds)</p>
+<h4 id="alignment-frequency-confirmation">Alignment Frequency Confirmation</h4>
+<p>Byte Sequence:
+[0x04]
+Explanation:
+Byte 1 (message_type): Alignment Frequency Confirmation (0x04)
+Byte 2 (confirmation_code): Success Code (200)</p>
 
 
 
@@ -1005,7 +1141,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../Block%20Diagram/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Block Diagram" rel="prev">
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1015,20 +1151,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Block Diagram
+                Home
               </div>
             </div>
           </a>
         
         
           
-          <a href="../ESP32%20Table/" class="md-footer__link md-footer__link--next" aria-label="Next: ESP32 Table" rel="next">
+          <a href="../Bill%20Of%20Materials/" class="md-footer__link md-footer__link--next" aria-label="Next: Bill of Materials (BOM)" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                ESP32 Table
+                Bill of Materials (BOM)
               </div>
             </div>
             <div class="md-footer__button md-icon">
