@@ -546,53 +546,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#example-messages" class="md-nav__link">
-    Example Messages
-  </a>
-  
-    <nav class="md-nav" aria-label="Example Messages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-message-formats" class="md-nav__link">
-    Example Message Formats
-  </a>
-  
-    <nav class="md-nav" aria-label="Example Message Formats">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sensor-data-transmission" class="md-nav__link">
-    Sensor Data Transmission
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#alignment-frequency" class="md-nav__link">
-    Alignment Frequency
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#alignment-frequency-confirmation" class="md-nav__link">
-    Alignment Frequency Confirmation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -853,53 +806,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#example-messages" class="md-nav__link">
-    Example Messages
-  </a>
-  
-    <nav class="md-nav" aria-label="Example Messages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-message-formats" class="md-nav__link">
-    Example Message Formats
-  </a>
-  
-    <nav class="md-nav" aria-label="Example Message Formats">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sensor-data-transmission" class="md-nav__link">
-    Sensor Data Transmission
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#alignment-frequency" class="md-nav__link">
-    Alignment Frequency
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#alignment-frequency-confirmation" class="md-nav__link">
-    Alignment Frequency Confirmation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1080,40 +986,18 @@
 <h2 id="handling-code-implementation"><strong>Handling Code Implementation</strong></h2>
 <h3 id="message-receiver">Message Receiver</h3>
 <p>The message receiver will:
-1. Handle all incoming messages over the UART network.
-2. Process messages intended for Kushagra:
-   - For "Sensor Data Transmission," extract temperature and humidity data and forward it to the web interface.
-   - For "Alignment Frequency Confirmation," log the confirmation status.
-3. Trash messages sent by Kushagra that loop back to the subsystem.
-4. Ignore malformed messages or those exceeding buffer size.</p>
+1. Handle all incoming messages over the UART network.\
+2. Process messages intended for Kushagra:\
+   - For "Sensor Data Transmission," extract temperature and humidity data and forward it to the web interface.\
+   - For "Alignment Frequency Confirmation," log the confirmation status.\
+3. Trash messages sent by Kushagra that loop back to the subsystem.\
+4. Ignore malformed messages or those exceeding buffer size.\</p>
 <h3 id="message-sender">Message Sender</h3>
-<p>The message sender will:
-1. Format all outgoing messages with proper prefix, suffix, sender, receiver, and data fields.
-2. Send example messages with time-varying data for testing purposes.
-3. Prioritize forwarding received messages over sending new ones.
+<p>The message sender will:\
+1. Format all outgoing messages with proper prefix, suffix, sender, receiver, and data fields.\
+2. Send example messages with time-varying data for testing purposes.\
+3. Prioritize forwarding received messages over sending new ones.\
 4. Limit sending rate using timers or interrupts.</p>
-<hr />
-<h2 id="example-messages">Example Messages</h2>
-<h3 id="example-message-formats">Example Message Formats</h3>
-<h4 id="sensor-data-transmission">Sensor Data Transmission</h4>
-<p>Byte Sequence:
-[0x01] [+70] [+30]
-Explanation:
-Byte 1 (message_type): Sensor Data Transmission (0x01)
-Byte 2-3 (temperature): Environmental temperature (+70°F)
-Byte 4-5 (humidity): Environmental humidity (+30%)</p>
-<h4 id="alignment-frequency">Alignment Frequency</h4>
-<p>Byte Sequence:
-[0x03]
-Explanation:
-Byte 1 (message_type): Alignment Frequency Command (0x03)
-Byte 2-3 (alignment_frequency): Update interval (300 seconds)</p>
-<h4 id="alignment-frequency-confirmation">Alignment Frequency Confirmation</h4>
-<p>Byte Sequence:
-[0x04]
-Explanation:
-Byte 1 (message_type): Alignment Frequency Confirmation (0x04)
-Byte 2 (confirmation_code): Success Code (200)</p>
 
 
 
