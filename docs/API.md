@@ -71,16 +71,26 @@ Message type for confirming receipt of an alignment frequency update.
 
 ### Message Receiver
 The message receiver will:
-1. Handle all incoming messages over the UART network.\
-2. Process messages intended for Kushagra:\
-   - For "Sensor Data Transmission," extract temperature and humidity data and forward it to the web interface.\
-   - For "Alignment Frequency Confirmation," log the confirmation status.\
-3. Trash messages sent by Kushagra that loop back to the subsystem.\
-4. Ignore malformed messages or those exceeding buffer size.\
+
+1. Handle all incoming messages over the UART network.
+
+2. Process messages intended for Kushagra:
+
+   - For "Sensor Data Transmission," extract temperature and humidity data and forward it to the web interface.
+
+   - For "Alignment Frequency Confirmation," log the confirmation status.
+
+3. Trash messages sent by Kushagra that loop back to the subsystem.
+
+4. Ignore malformed messages or those exceeding buffer size.
 
 ### Message Sender
-The message sender will:\
-1. Format all outgoing messages with proper prefix, suffix, sender, receiver, and data fields.\
-2. Send example messages with time-varying data for testing purposes.\
-3. Prioritize forwarding received messages over sending new ones.\
+The message sender will:
+
+1. Format all outgoing messages with proper prefix, suffix, sender, receiver, and data fields.
+
+2. Send example messages with time-varying data for testing purposes.
+
+3. Prioritize forwarding received messages over sending new ones.
+
 4. Limit sending rate using timers or interrupts.
