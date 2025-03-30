@@ -1,96 +1,82 @@
-# **API Messaging Compliance**
+# API Messaging Compliance  
+**Author:** Kushagra Dashora  
 
-This document outlines the message types relevant to the Internet Communication Subsystem, including detailed tables for each message type, compliance verification, and implementation details.
-
----
-
-## **Messages Sent or Received**
-
-### **Messages Sent**
-1. **Message Type 3: Alignment Frequency**  
-   - Sent to: Alex  
-   - Purpose: Set the solar panel alignment frequency.
-
-### **Messages Received**
-1. **Message Type 1: Sensor Data Transmission**  
-   - Sent by: Ian (broadcast to all subsystems)  
-   - Purpose: Receive environmental data (temperature and humidity) for display on the web interface.
-   
-2. **Message Type 4: Alignment Frequency Confirmation**  
-   - Sent by: Alex  
-   - Purpose: Confirm receipt of alignment frequency update.
+This document outlines the message structure used by the Internet Communication Subsystem for receiving broadcast sensor data from the Sensor Suite. Messages are parsed over UART and published to the MQTT dashboard.
 
 ---
 
-## **Message Type Tables**
+## 🔗 Subsystem Connection
 
-### **Message Type 1: Sensor Data Transmission**
+This subsystem receives broadcasted sensor readings from **Ian Anderson’s Sensor Suite** and interacts with:
 
-Message type for receiving environmental data, including temperature and humidity, broadcasted to all subsystems.
-
-| Byte(s) | Variable Name | Data Type   | Description               | Min Value | Max Value | Example Value |
-|---------|---------------|-------------|---------------------------|-----------|-----------|---------------|
-| 1       | `message_type`| `uint8_t`   | Message identifier        | 0         | 255       | 0x01          |
-| 2-3     | `temperature` | `int16_t`   | Environmental temperature | -40       | +125      | +70           |
-| 4-5     | `humidity`    | `uint16_t`  | Environmental humidity    | 0         | 100       | +30           |
-
-- **Purpose**: Display real-time environmental data on the web interface.
-- **Example Message**: `[0x01] [+70] [+30]`
+- **Solar Array** – Alex Comeaux  
+- **HMI Interface** – Aarshon George  
+- **MQTT Server / GitHub Dashboard** – Cloud endpoint  
 
 ---
 
-### **Message Type 3: Alignment Frequency**
+## 📡 Broadcast Sensor Data
 
-Message type for sending a command to set the solar panel alignment frequency.
+This message type broadcasts all sensor data.  
+All numeric fields use **big-endian** format.
 
-| Byte(s) | Variable Name        | Data Type   | Description                       | Min Value | Max Value | Example Value |
-|---------|----------------------|-------------|-----------------------------------|-----------|-----------|---------------|
-| 1       | `message_type`       | `uint8_t`   | Message identifier                | 0         | 255       | 0x03          |
-| 2-3     | `alignment_frequency`| `uint16_t`  | Panel alignment frequency (secs)  | 1         | 65535     | 300           |
+### 🧾 Message Format
 
-- **Purpose**: Optimize solar panel performance by adjusting alignment intervals.
-- **Example Message**: `[0x03][300]`
+|             | byte 1     | byte 2       | byte 3-4         |
+|-------------|------------|--------------|------------------|
+| **Variable Name** | `msg_type` | `sensor_num` | `sensor_val`     |
+| **Variable Type** | `uint8_t`  | `uint8_t`    | `uint16_t`       |
+| **Min Value**     | `0x31`     | `0x31`       | Varies by sensor |
+| **Max Value**     | `0x31`     | `0x34`       | Varies by sensor |
+| **Example**       | `0x31`     | `0x33`       | `0x0025` = 37    |
 
----
-
-### **Message Type 4: Alignment Frequency Confirmation**
-
-Message type for confirming receipt of an alignment frequency update.
-
-| Byte(s) | Variable Name      | Data Type   | Description                 | Min Value    | Max Value    | Example Value |
-|---------|--------------------|-------------|-----------------------------|--------------|--------------|---------------|
-| 1       | `message_type`     | `uint8_t`   | Message identifier          | 0            | 255          | 0x04          |
-| 2       | `confirmation_code`| `uint8_t`   | Confirmation status (e.g., success or error code)    | 0            | 255          | 200           |
-
-- **Purpose**: Ensure successful communication between subsystems.
-- **Example Message**: `[0x04][200]`
+- **Purpose**: Broadcast real-time sensor values to all subsystems
+- **Receiver Behavior**: Extract and log/display based on sensor number
 
 ---
 
-## **Handling Code Implementation**
+### 📊 Sensor Number Reference Table
+
+| Sensor         | Number | Hex Code | Data Min | Data Max |
+|----------------|--------|----------|----------|----------|
+| Wind Speed     | 1      | `0x31`   | 0        | 100      |
+| Temperature    | 2      | `0x32`   | -40      | 85       |
+| Humidity       | 3      | `0x33`   | 20       | 80       |
+| Air Pressure   | 4      | `0x34`   | 10       | 1300     |
+
+- Values are interpreted based on `sensor_num`
+- Sensor values are sent as **2-byte unsigned integers**
+
+---
+
+## 🧠 Message Handling Logic (ESP32 UART)
 
 ### Message Receiver
-The message receiver will:
 
-1. Handle all incoming messages over the UART network.
+1. **Monitor UART** for incoming messages from Sensor Suite.
+2. **Parse incoming 4-byte messages**:
+   - Validate message type: `0x31`
+   - Identify sensor via `sensor_num`
+   - Extract `sensor_val` as `uint16_t` (big endian)
+3. **Forward decoded values** to:
+   - Web dashboard via MQTT
+   - Optional logging/local display
 
-2. Process messages intended for Kushagra:
+4. **Ignore**:
+   - Invalid `msg_type`
+   - Messages shorter than 4 bytes
+   - Loopback data
 
-    - For "Sensor Data Transmission," extract temperature and humidity data and forward it to the web interface.
+---
 
-    - For "Alignment Frequency Confirmation," log the confirmation status.
+## 🧭 Team Member IDs
 
-3. Trash messages sent by Kushagra that loop back to the subsystem.
+Each subsystem is assigned a unique address for UART-based communication.
 
-4. Ignore malformed messages or those exceeding buffer size.
+| Name     | Subsystem | Address |
+|----------|-----------|---------|
+| Aarshon  | HMI       | `0x61`  |
+| Alex     | Motor     | `0x63`  |
+| Ian      | Sensor    | `0x69`  |
+| KD       | Websocket | `0x6B`  |
 
-### Message Sender
-The message sender will:
-
-1. Format all outgoing messages with proper prefix, suffix, sender, receiver, and data fields.
-
-2. Send example messages with time-varying data for testing purposes.
-
-3. Prioritize forwarding received messages over sending new ones.
-
-4. Limit sending rate using timers or interrupts.
