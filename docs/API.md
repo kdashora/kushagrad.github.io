@@ -79,4 +79,4 @@ Each subsystem is assigned a unique address for UART-based communication.
 | Alex     | Motor     | `0x63`  |
 | Ian      | Sensor    | `0x69`  |
 | KD       | Websocket | `0x6B`  |
-
+| Broadcast|           | '0x58'  |
