@@ -1,5 +1,5 @@
 ---
-title: Internet Communication Subsystem
+title: Schematic Design
 ---
 
 ## Block Diagram
