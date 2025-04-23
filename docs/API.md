@@ -15,68 +15,85 @@ This subsystem receives broadcasted sensor readings from **Ian Anderson’s Sens
 
 ---
 
-## 📡 Broadcast Sensor Data
+## 📥 Received Messages
 
-This message type broadcasts all sensor data.  
-All numeric fields use **big-endian** format.
+### Broadcast Sensor Data  
+Receives real-time sensor values from the Sensor subsystem (Ian). Used to display values on a web dashboard via MQTT.
 
-### 🧾 Message Format
+| Variable Name | byte 1   | byte 2         | byte 3-4                 |
+|---------------|----------|----------------|--------------------------|
+| msg_type      | `0x31`   | `0x31`–`0x34`   | `sensor_val` (uint16_t, big endian) |
 
-|             | byte 1     | byte 2       | byte 3-4         |
-|-------------|------------|--------------|------------------|
-| **Variable Name** | `msg_type` | `sensor_num` | `sensor_val`     |
-| **Variable Type** | `uint8_t`  | `uint8_t`    | `uint16_t`       |
-| **Min Value**     | `0x31`     | `0x31`       | Varies by sensor |
-| **Max Value**     | `0x31`     | `0x34`       | Varies by sensor |
-| **Example**       | `0x31`     | `0x33`       | `0x0025` = 37    |
+#### Sensor Reference Table
 
-- **Purpose**: Broadcast real-time sensor values to all subsystems
-- **Receiver Behavior**: Extract and log/display based on sensor number
+| Sensor         | Number | Data Min | Data Max |
+|----------------|--------|----------|----------|
+| Wind Speed     | 1      | 0        | 100      |
+| Temperature    | 2      | -40      | 85       |
+| Humidity       | 3      | 20       | 80       |
+| Air Pressure   | 4      | 10       | 1300     |
 
----
-
-### 📊 Sensor Number Reference Table
-
-| Sensor         | Number | Hex Code | Data Min | Data Max |
-|----------------|--------|----------|----------|----------|
-| Wind Speed     | 1      | `0x31`   | 0        | 100      |
-| Temperature    | 2      | `0x32`   | -40      | 85       |
-| Humidity       | 3      | `0x33`   | 20       | 80       |
-| Air Pressure   | 4      | `0x34`   | 10       | 1300     |
-
-- Values are interpreted based on `sensor_num`
-- Sensor values are sent as **2-byte unsigned integers**
+**Example**:  
+`[0x31, 0x33, 0x00, 0x25]` → Humidity sensor sending value **37**
 
 ---
 
-## 🧠 Message Handling Logic (ESP32 UART)
+## 📤 Outgoing Messages
 
-### Message Receiver
+### Subsystem Error Code  
+Sends a code representing WebSocket subsystem’s functionality.
 
-1. **Monitor UART** for incoming messages from Sensor Suite.
-2. **Parse incoming 4-byte messages**:
-   - Validate message type: `0x31`
-   - Identify sensor via `sensor_num`
-   - Extract `sensor_val` as `uint16_t` (big endian)
-3. **Forward decoded values** to:
-   - Web dashboard via MQTT
-   - Optional logging/local display
+| Byte 1 (msg_type) | Byte 2 (err_code) |
+|-------------------|-------------------|
+| `0x34`            | `0x01`–`0x03`      |
 
-4. **Ignore**:
-   - Invalid `msg_type`
-   - Messages shorter than 4 bytes
-   - Loopback data
+#### Error Code Table
+
+| Code | Meaning              |
+|------|----------------------|
+| 1    | Full functionality   |
+| 2    | Partial functionality|
+| 3    | No functionality     |
+
+**Example**:  
+`[0x34, 0x01]` → System fully functional
 
 ---
 
-## 🧭 Team Member IDs
+### Subsystem Error Message  
+Sends a descriptive error message to the HMI (Aarshon).
 
-Each subsystem is assigned a unique address for UART-based communication.
+| Byte 1 (msg_type) | Byte 2–58 (err_msg)         |
+|-------------------|-----------------------------|
+| `0x35`            | char array (1–57 characters)|
 
-| Name     | Subsystem | Address |
-|----------|-----------|---------|
-| Aarshon  | HMI       | `0x61`  |
-| Alex     | Motor     | `0x63`  |
-| Ian      | Sensor    | `0x69`  |
-| KD       | Websocket | `0x6B`  |
-| Broadcast|           | '0x58'  |
+**Example**:  
+`[0x35, "MQTT server unreachable"]`
+
+---
+
+## 🧭 Message Structure Summary
+
+| Byte Index | Description        | Example        |
+|------------|--------------------|----------------|
+| `[0]`      | Start Byte 1       | `'A'`          |
+| `[1]`      | Start Byte 2       | `'Z'`          |
+| `[2]`      | Sender ID          | `'k'`          |
+| `[3]`      | Receiver ID        | `'a'`, `'i'`, `'c'` |
+| `[4]`      | msg_type (1–5)     | `0x31`         |
+| `[5–n]`    | Data / Payload     | Varies         |
+| `[n+1]`    | End Byte 1         | `'Y'`          |
+| `[n+2]`    | End Byte 2         | `'B'`          |
+
+---
+
+## 🧑‍🤝‍🧑 Team Member IDs
+
+| Name     | Subsystem | Char Address |
+|----------|-----------|--------------|
+| Aarshon  | HMI       | `'a'`        |
+| Alex     | Actuator  | `'c'`        |
+| Ian      | Sensor    | `'i'`        |
+| KD       | WebSocket | `'k'`        |
+
+---
