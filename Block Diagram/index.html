@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#block-diagram" class="md-skip">
+        <a href="#final-block-diagram" class="md-skip">
           Skip to content
         </a>
       
@@ -493,15 +493,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#block-diagram" class="md-nav__link">
-    Block Diagram
+  <a href="#final-block-diagram" class="md-nav__link">
+    Final Block Diagram
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#subsystem-block-diagram" class="md-nav__link">
-    Subsystem Block Diagram
+  <a href="#design-explanation" class="md-nav__link">
+    Design Explanation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-making-process" class="md-nav__link">
+    Decision-Making Process
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-requirement-alignment" class="md-nav__link">
+    Product Requirement Alignment
   </a>
   
 </li>
@@ -639,15 +653,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#block-diagram" class="md-nav__link">
-    Block Diagram
+  <a href="#final-block-diagram" class="md-nav__link">
+    Final Block Diagram
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#subsystem-block-diagram" class="md-nav__link">
-    Subsystem Block Diagram
+  <a href="#design-explanation" class="md-nav__link">
+    Design Explanation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-making-process" class="md-nav__link">
+    Decision-Making Process
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-requirement-alignment" class="md-nav__link">
+    Product Requirement Alignment
   </a>
   
 </li>
@@ -677,11 +705,27 @@
 
   <h1>Block Diagram</h1>
 
-<h2 id="block-diagram">Block Diagram</h2>
-<p>Here is the block diagram for Internet Communication Subsystem:
-<a class="glightbox" href="../subfolder/KD_Block_Diagram.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Stage 1: Ideation" src="../subfolder/KD_Block_Diagram.png" /></a></p>
-<h2 id="subsystem-block-diagram">Subsystem Block Diagram</h2>
+<h2 id="final-block-diagram">Final Block Diagram</h2>
+<p>Here is the updated and finalized block diagram for the Internet Communication Subsystem:</p>
+<p><a class="glightbox" href="../subfolder/KD_Block_Diagram.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Final Block Diagram" src="../subfolder/KD_Block_Diagram.png" /></a></p>
 <p><a href="../subfolder/KD_Block_Diagram.pdf">Download Subsystem Block Diagram PDF</a></p>
+<h2 id="design-explanation">Design Explanation</h2>
+<p>This updated block diagram represents the finalized design of the Internet Communication Subsystem, incorporating all feedback and refinements made throughout the project development cycle. </p>
+<p>Key updates include:
+- Updated GPIO connections: <strong>GPIO 35, 38, 43, and 44</strong> are now designated for serial and digital communications between the ESP32 and other headers.
+- Simplified wiring structure with better separation of upstream and downstream communication.
+- Clearer labeling of power flow from the <strong>9V barrel jack</strong>, through a <strong>3.3V switching regulator</strong>, and into the ESP32 WiFi module.</p>
+<h2 id="decision-making-process">Decision-Making Process</h2>
+<p>Our goal from the start was to establish a stable and efficient wireless communication pipeline between the environmental sensor subsystems and an external MQTT server/GitHub-hosted dashboard. </p>
+<p>The <strong>ESP32-S3-WROOM-1-N4</strong> was selected for its low-power wireless connectivity, integration ease, and support for MQTT protocol. GPIOs were chosen based on their digital I/O functionality and UART compatibility, and adjusted after prototype testing for best performance.</p>
+<p>We used a <strong>3.3V switching regulator</strong> to safely convert the 9V barrel jack input to a level suitable for the ESP32. The use of <strong>jumpers and headers</strong> ensures modularity and ease of debugging during subsystem integration.</p>
+<h2 id="product-requirement-alignment">Product Requirement Alignment</h2>
+<p>This design satisfies the Internet Communication Subsystem’s functional and electrical requirements:
+- <strong>Wi-Fi-enabled MQTT publishing</strong> of sensor data to a cloud server or GitHub-hosted website.
+- <strong>Reliable UART and GPIO-based communication</strong> with both upstream and downstream subsystems.
+- <strong>Regulated power delivery</strong> using a dedicated voltage regulator.
+- <strong>Scalable and modular system design</strong> using upstream/downstream headers to support other student-designed subsystems.</p>
+<p>This final version is optimized for both functionality and maintainability in real-world classroom and demo environments.</p>
 
 
 
