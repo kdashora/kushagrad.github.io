@@ -23,12 +23,6 @@ Here is the finalized schematic for the Internet Communication Subsystem:
 
 ---
 
-## Final Bill of Materials (BOM)
-
-[Download BOM (Excel Template)](./subfolder/KD_BOM.xlsx)
-
----
-
 ## Power Budget
 
 Here is the Power Budget for the Internet Communication Subsystem:
