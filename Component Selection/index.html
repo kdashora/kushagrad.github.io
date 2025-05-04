@@ -523,6 +523,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#final-major-component-summary" class="md-nav__link">
+    Final Major Component Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#major-component-selections" class="md-nav__link">
     Major Component Selections
   </a>
@@ -571,22 +578,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pin-allocation" class="md-nav__link">
-    Pin Allocation
-  </a>
-  
-    <nav class="md-nav" aria-label="Pin Allocation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#esp32-peripheral-pin-assignments" class="md-nav__link">
-    ESP32 Peripheral Pin Assignments:
+  <a href="#updated-esp32-pinout-table" class="md-nav__link">
+    Updated ESP32 Pinout Table
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#decision-making-process-for-pinout-configuration" class="md-nav__link">
+    Decision-Making Process for Pinout Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-design-meets-product-requirements" class="md-nav__link">
+    How Design Meets Product Requirements
+  </a>
   
 </li>
       
@@ -720,6 +728,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#final-major-component-summary" class="md-nav__link">
+    Final Major Component Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#major-component-selections" class="md-nav__link">
     Major Component Selections
   </a>
@@ -768,22 +783,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pin-allocation" class="md-nav__link">
-    Pin Allocation
-  </a>
-  
-    <nav class="md-nav" aria-label="Pin Allocation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#esp32-peripheral-pin-assignments" class="md-nav__link">
-    ESP32 Peripheral Pin Assignments:
+  <a href="#updated-esp32-pinout-table" class="md-nav__link">
+    Updated ESP32 Pinout Table
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#decision-making-process-for-pinout-configuration" class="md-nav__link">
+    Decision-Making Process for Pinout Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-design-meets-product-requirements" class="md-nav__link">
+    How Design Meets Product Requirements
+  </a>
   
 </li>
       
@@ -821,9 +837,40 @@
 <h2 id="introduction"><strong>Introduction</strong></h2>
 <p>As part of our embedded systems design project, my subsystem is responsible for collecting data from all sensors in the system, transmitting it via a Wi-Fi network created by the ESP32 microcontroller, and updating this data in real-time on a GitHub-hosted webpage. This document outlines the selection of components for my subsystem, focusing on efficient power regulation, reliable wireless communication, and seamless integration with sensors.</p>
 <hr />
+<h2 id="final-major-component-summary"><strong>Final Major Component Summary</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Component Name</th>
+<th>Role</th>
+<th>Final Part Number / ID</th>
+<th>Justification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESP32-S3-WROOM-1-N4</td>
+<td>Wi-Fi-enabled microcontroller</td>
+<td>ESP32-S3-WROOM-1-N4</td>
+<td>Best balance of Wi-Fi support, power, GPIO</td>
+</tr>
+<tr>
+<td>AP63203WU-7</td>
+<td>3.3V Switching Voltage Regulator</td>
+<td>AP63203WU-7</td>
+<td>High-efficiency regulator for 9V–3.3V</td>
+</tr>
+<tr>
+<td>DC Barrel Jack Adapter</td>
+<td>Power input interface</td>
+<td>PRT-10811</td>
+<td>Reliable power input from wall adapter</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h2 id="major-component-selections"><strong>Major Component Selections</strong></h2>
 <h3 id="microcontroller-selection"><strong>Microcontroller Selection</strong></h3>
-<p>The ESP32 microcontroller is the core of this subsystem, providing Wi-Fi connectivity and the processing power needed to gather and transmit sensor data.</p>
 <table>
 <thead>
 <tr>
@@ -855,10 +902,9 @@
 </tbody>
 </table>
 <p><strong>Final Selection: ESP32-S3-WROOM-1-N4</strong><br />
-<em>Rationale:</em> The ESP32-S3-WROOM-1-N4 was selected due to its robust Wi-Fi capabilities, dual-core processor for multitasking, and excellent library support for embedded data transmission tasks.</p>
+<em>Rationale:</em> Chosen for its robust Wi-Fi support, multiple GPIOs, dual-core processor, and strong developer ecosystem.</p>
 <hr />
 <h3 id="power-regulation"><strong>Power Regulation</strong></h3>
-<p>To ensure stable operation of the ESP32 and sensors, a voltage regulator is required to step down the input voltage to 3.3V.</p>
 <table>
 <thead>
 <tr>
@@ -890,10 +936,9 @@
 </tbody>
 </table>
 <p><strong>Final Selection: AP63203WU_7</strong><br />
-<em>Rationale:</em> The AP63203WU_7 was selected due to its high efficiency, low power loss, compact size, and suitability for surface mount applications, making it ideal for the power requirements of the ESP32 and associated components.</p>
+<em>Rationale:</em> Offers high efficiency, surface mount compatibility, and ideal size for our compact PCB design.</p>
 <hr />
 <h3 id="power-input"><strong>Power Input</strong></h3>
-<p>The subsystem requires a reliable power source capable of providing sufficient current for the ESP32 and sensors.</p>
 <table>
 <thead>
 <tr>
@@ -913,71 +958,99 @@
 </tbody>
 </table>
 <p><strong>Final Selection: DC Barrel Jack Adapter</strong><br />
-<em>Rationale:</em> A DC barrel jack adapter was selected for its simplicity and ability to provide stable power from a wall adapter or external supply. This ensures consistent operation during extended use.</p>
+<em>Rationale:</em> Easy to implement and provides reliable power supply with no need for USB tethering.</p>
 <hr />
 <h2 id="additional-components-to-enhance-subsystem"><strong>Additional Components to Enhance Subsystem</strong></h2>
-<p>To improve functionality and robustness, the following additional components are recommended:</p>
 <ol>
 <li><strong>Capacitors (Decoupling):</strong></li>
-<li>
-<p>Add 10µF and 0.1µF capacitors near the ESP32 and voltage regulator to reduce noise and stabilize voltage.</p>
-</li>
-<li>
-<p><strong>Heat Sink (Optional):</strong></p>
-</li>
-<li>
-<p>Improve thermal performance of the voltage regulator during extended operation.</p>
-</li>
-<li>
-<p><strong>LED Indicators:</strong></p>
-</li>
-<li>Include LEDs for power status and Wi-Fi activity to aid debugging.</li>
+<li>Add 10µF and 0.1µF near ESP32 and regulator to suppress noise.</li>
+<li><strong>Heat Sink (Optional):</strong></li>
+<li>Use with voltage regulator if temperatures rise during sustained load.</li>
+<li><strong>LED Indicators:</strong></li>
+<li>Power LED and Wi-Fi status LED to debug and verify connectivity visually.</li>
 </ol>
 <hr />
 <h2 id="responsibilities"><strong>Responsibilities</strong></h2>
 <ol>
-<li><strong>Data Collection:</strong> Collect sensor data using UART (serial communication).</li>
-<li><strong>Wi-Fi Communication:</strong> Use the ESP32's built-in Wi-Fi module to create a local network and transmit sensor data.</li>
-<li><strong>Power Management:</strong> Regulate input voltage using the AP63203WU_7 regulator to ensure a stable 3.3V supply.</li>
-<li><strong>Data Transmission:</strong> Continuously update sensor readings on a GitHub-hosted webpage in real time.</li>
-<li><strong>Integration:</strong> Ensure seamless compatibility between sensors and the microcontroller through proper pin allocation and power management.</li>
+<li><strong>Data Collection:</strong> Collect sensor data over UART using GPIO 43 (TX) and GPIO 44 (RX).</li>
+<li><strong>Wi-Fi Communication:</strong> Use the ESP32 Wi-Fi module to transmit sensor data to the MQTT broker.</li>
+<li><strong>Power Management:</strong> Convert 9V input to stable 3.3V using AP63203WU_7 regulator.</li>
+<li><strong>Live Data Updates:</strong> Send data to GitHub-hosted webpage for real-time visualization.</li>
+<li><strong>System Integration:</strong> Communicate with both upstream and downstream subsystems via GPIO 35 and 38.</li>
 </ol>
 <hr />
-<h2 id="pin-allocation"><strong>Pin Allocation</strong></h2>
-<h3 id="esp32-peripheral-pin-assignments">ESP32 Peripheral Pin Assignments:</h3>
+<h2 id="updated-esp32-pinout-table"><strong>Updated ESP32 Pinout Table</strong></h2>
 <table>
 <thead>
 <tr>
-<th>Peripheral</th>
-<th>Pin Assignment</th>
+<th><strong>Pin</strong></th>
+<th><strong>Function</strong></th>
+<th><strong>Connected To</strong></th>
+<th><strong>Subsystem</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>GPIO 35</td>
+<td>Digital I/O</td>
+<td>Downstream Header</td>
+<td>Communication Interface</td>
+</tr>
+<tr>
+<td>GPIO 38</td>
+<td>Digital I/O</td>
+<td>Upstream Header</td>
+<td>Communication Interface</td>
+</tr>
+<tr>
+<td>GPIO 43</td>
 <td>UART TX</td>
-<td>GPIO1</td>
+<td>Sensor Subsystem</td>
+<td>Data Collection</td>
 </tr>
 <tr>
+<td>GPIO 44</td>
 <td>UART RX</td>
-<td>GPIO3</td>
+<td>Sensor Subsystem</td>
+<td>Data Collection</td>
 </tr>
 <tr>
-<td>Micro USB D-</td>
-<td>GPIO19</td>
+<td>VDD</td>
+<td>Power (3.3V)</td>
+<td>From Switching Regulator</td>
+<td>Power Supply</td>
 </tr>
 <tr>
-<td>Micro USB D+</td>
-<td>GPIO20</td>
-</tr>
-<tr>
-<td>Power Input</td>
-<td>VIN via DC Barrel Jack</td>
+<td>GND</td>
+<td>Ground</td>
+<td>Common Ground Plane</td>
+<td>Power Supply</td>
 </tr>
 </tbody>
 </table>
 <hr />
+<h2 id="decision-making-process-for-pinout-configuration"><strong>Decision-Making Process for Pinout Configuration</strong></h2>
+<p>The pin mapping was finalized after evaluating GPIO availability, electrical constraints, and subsystem routing complexity. The following guided our process:</p>
+<ul>
+<li>Selecting <strong>dedicated UART pins</strong> (GPIO 43 and 44) to prevent serial conflicts.</li>
+<li>Ensuring <strong>digital I/O pins (GPIO 35, 38)</strong> were free from boot or flash limitations.</li>
+<li>Prioritizing <strong>clean PCB routing paths</strong> for all signal and power lines.</li>
+<li>Testing UART behavior under full sensor load to ensure reliability.</li>
+</ul>
+<p>This structure ensures minimal interference and maximum compatibility with sensor data flow and inter-subsystem signaling.</p>
+<hr />
+<h2 id="how-design-meets-product-requirements"><strong>How Design Meets Product Requirements</strong></h2>
+<p>Our design meets all defined requirements:</p>
+<ul>
+<li>✅ <strong>Wireless Transmission:</strong> ESP32’s native Wi-Fi and MQTT support provide real-time updates to GitHub webpage.</li>
+<li>✅ <strong>UART-Based Sensor Collection:</strong> Pinout isolates UART pins to prevent conflicts.</li>
+<li>✅ <strong>Reliable Power Supply:</strong> Barrel jack and AP63203WU_7 ensure stable and safe 3.3V operation.</li>
+<li>✅ <strong>Modularity:</strong> GPIOs connected to upstream/downstream headers simplify integration with other teams’ subsystems.</li>
+<li>✅ <strong>Efficiency and Debuggability:</strong> LED indicators and compact switching regulator improve usability and maintainability.</li>
+</ul>
+<hr />
 <h2 id="conclusion"><strong>Conclusion</strong></h2>
-<p>The selected components ensure efficient integration of all sensors with the ESP32 microcontroller while meeting project specifications for real-time data collection and transmission to a GitHub-hosted webpage. By selecting the <strong>AP63203WU_7</strong> regulator, the subsystem benefits from improved power efficiency, and by limiting communication to <strong>UART only</strong>, the design is simplified for reliable data transfer.</p>
+<p>The final component and pin configuration guarantees a robust, modular, and power-efficient Wi-Fi subsystem capable of real-time environmental data collection and wireless display. Careful pin allocation and component selection directly support reliability, integration, and long-term maintainability of the system.</p>
 
 
 
