@@ -5,7 +5,8 @@ tags:
 - tag2
 ---
 
-**Name:** Kushagra Dashora  
+**Name:** Kushagra Dashora
+**Email:** kdashora@asu.edu    
 **Class:** EGR314 - 12:00PM - 1:15PM Monday/Wednesday  
 **Professor:** Dr. Kevin Nichols  
 
