@@ -34,7 +34,7 @@ tags:
 
 Our team is structured to leverage each member’s expertise effectively:  
 
-- **Aarshon** – **Team Lead & Systems Integrator**: Oversees project execution, ensuring seamless integration of components.  
-- **Alex** – **Hardware Specialist**: Designs and develops the hardware framework for the device.  
-- **Ian** – **Software Developer**: Implements and optimizes the software architecture.  
-- **Kushagra** – **User Experience Designer & Tester**: Focuses on usability, ensuring an intuitive and engaging experience for users.  
+- **Aarshon** – **HMI Interface Lead**: Developed the user interface (keypad and OLED display) and integrated system controls.  
+- **Alex** – **Solar Actuator Engineer**: Designed the motor control subsystem for solar panel tracking.  
+- **Ian** – **Sensor Suite Developer**: Implemented environmental sensors and data acquisition.  
+- **Kushagra** – **Internet Communication Specialist**: Established Wi-Fi/MQTT connectivity and web dashboard integration.
